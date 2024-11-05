@@ -1,0 +1,51 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-MRMY000/rustlings-MRMY000/format_check)
+error[E0308]: mismatched types
+  --> src/lib.rs:43:44
+   |
+43 |     fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {}
+   |        --------                            ^^^^^^^^^^^^^^^^^^^^^^^^^ expected `Result<Color, IntoColorError>`, found `()`
+   |        |
+   |        implicitly returns `()` as its body has no tail or `return` expression
+   |
+   = note:   expected enum `std::result::Result<Color, IntoColorError>`
+           found unit type `()`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:49:35
+   |
+49 |     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {}
+   |        --------                   ^^^^^^^^^^^^^^^^^^^^^^^^^ expected `Result<Color, IntoColorError>`, found `()`
+   |        |
+   |        implicitly returns `()` as its body has no tail or `return` expression
+   |
+   = note:   expected enum `std::result::Result<Color, IntoColorError>`
+           found unit type `()`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:55:35
+   |
+55 |     fn try_from(slice: &[i16]) -> Result<Self, Self::Error> {}
+   |        --------                   ^^^^^^^^^^^^^^^^^^^^^^^^^ expected `Result<Color, IntoColorError>`, found `()`
+   |        |
+   |        implicitly returns `()` as its body has no tail or `return` expression
+   |
+   = note:   expected enum `std::result::Result<Color, IntoColorError>`
+           found unit type `()`
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `format_check` (lib) due to 3 previous errors
+
+[!] Source code format check: FAILED
