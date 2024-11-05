@@ -3,12 +3,10 @@
 // Execute `rustlings hint move_semantics1` or use the `hint` watch subcommand
 // for a hint.
 
-
-
 fn main() {
     let mut vec0 = Vec::new();
 
-    let mut vec1 = fill_vec(vec0);//不能再次直接借用vec0，除非vec1是vec0的clone
+    let mut vec1 = fill_vec(vec0); //不能再次直接借用vec0，除非vec1是vec0的clone
 
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 
